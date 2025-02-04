@@ -93,6 +93,38 @@
     @apply rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3 !important;
   }
 
+  .tag {
+    @apply bg-secondary px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative tag-tri;
+  }
+
+  .tag-tri {
+    @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+  }
+
+  .category-tag {
+    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full;
+  }
+
+  .no-result {
+    @apply text-black-100 text-sm font-normal;
+  }
+
+  .divider {
+    @apply border-dotted bg-zinc-400 max-w-4xl my-10 mx-auto;
+  }
+
+  .view_skeleton {
+    @apply bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3;
+  }
+
+  .view_container {
+    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+  }
+
+  .view_text {
+    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-lg capitalize;
+  }
+
   .pattern {
     background-image: linear-gradient(
       to right,
