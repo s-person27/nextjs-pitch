@@ -59,6 +59,7 @@
     @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
   }
 
+  /* search */
   .search-form {
     @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
   }
@@ -76,7 +77,6 @@
   }
 
   /* startup cards */
-
   .card_grid {
     @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5;
   }
@@ -91,6 +91,48 @@
 
   .startup-card_btn {
     @apply rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3 !important;
+  }
+
+  /* view */
+  .view_skeleton {
+    @apply bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3;
+  }
+
+  .view_container {
+    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+  }
+
+  .view_text {
+    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-lg capitalize;
+  }
+
+  /* startup form */
+  .startup-form {
+    @apply max-w-2xl mx-auto bg-white my-10 space-y-8 px-6;
+  }
+
+  .startup-form_label {
+    @apply font-bold text-[18px] text-black uppercase;
+  }
+
+  .startup-form_input {
+    @apply border-[3px] border-black px-5 py-7 text-[18px] text-black font-semibold rounded-full mt-3 placeholder:text-black-300 !important;
+  }
+
+  .startup-form_textarea {
+    @apply border-[3px] border-black p-5 text-[18px] text-black font-semibold rounded-[20px] mt-3 placeholder:text-black-300 !important;
+  }
+
+  .startup-form_error {
+    @apply text-red-500 mt-2 ml-5;
+  }
+
+  .startup-form_editor {
+    @apply mt-3 border-[3px] border-black text-[18px] text-black font-semibold placeholder:text-black-300 !important;
+  }
+
+  .startup-form_btn {
+    @apply bg-primary border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] !important;
   }
 
   .tag {
@@ -111,18 +153,6 @@
 
   .divider {
     @apply border-dotted bg-zinc-400 max-w-4xl my-10 mx-auto;
-  }
-
-  .view_skeleton {
-    @apply bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3;
-  }
-
-  .view_container {
-    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
-  }
-
-  .view_text {
-    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-lg capitalize;
   }
 
   .pattern {
