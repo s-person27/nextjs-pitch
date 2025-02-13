@@ -31,6 +31,7 @@ const SturtupCard = ({ post }: { post: StartupCardType }) => {
           <span className="text-16-medium">{views}</span>
         </div>
       </div>
+
       <div className="flex-between mt-5 gap-5">
         <div className="flex-1">
           <Link href={`/user/${author?._id}`}>
@@ -42,25 +43,19 @@ const SturtupCard = ({ post }: { post: StartupCardType }) => {
         </div>
         <Link href={`/user/${author?._id}`}>
           <Image
-            src={author?.image || "https://placehold.co/48"}
-            alt="Author Profile"
+            src={author?.image!}
+            alt={author?.name!}
             width={48}
             height={48}
             className="rounded-full"
           />
         </Link>
       </div>
+
       <Link href={`/startup/${_id}`}>
         <p className="startup-card_desc">{description}</p>
-        {image && (
-          <Image
-            src={image}
-            alt={`${title} image`}
-            width={276}
-            height={164}
-            className="startup-card_img"
-          />
-        )}
+
+        <img src={image} alt="placeholder" className="startup-card_img" />
       </Link>
 
       <div className="flex-between gap-3 mt-5">
