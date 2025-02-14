@@ -21,14 +21,13 @@ export const experimental_ppr = true;
 const StartupPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
-  const post = await client.fetch(STARTUPS_BY_ID_QUERY, { id });
-
-  const { select: editorPosts, title } = await client.fetch(
-    PLAYLIST_BY_SLUG_QUERY,
-    {
-      slug: "newest-startups",
-    }
-  );
+  const [post, { select: editorPosts, title: playlistTitle }] =
+    await Promise.all([
+      client.fetch(STARTUPS_BY_ID_QUERY, { id }),
+      client.fetch(PLAYLIST_BY_SLUG_QUERY, {
+        slug: "newest-startups",
+      }),
+    ]);
 
   if (!post) return notFound();
 
@@ -87,7 +86,7 @@ const StartupPage = async ({ params }: { params: Promise<{ id: string }> }) => {
         <hr className="divider" />
         {editorPosts?.length > 0 && (
           <div className="max-w-4xl mx-auto">
-            <p className="text-30-semibold">{title}</p>
+            <p className="text-30-semibold">{playlistTitle}</p>
             <ul className="mt-7 card_grid-sm">
               {editorPosts.map((post: StartupCardType, index: number) => (
                 <StartupCard key={index} post={post} />
